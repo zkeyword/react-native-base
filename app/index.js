@@ -16,7 +16,6 @@ import vercheckModel from './models/vercheck'
 import hitpointplayModel from './models/hitpointplay'
 import audioTypeModel from './models/audioType'
 
-
 const app = dva({
     initialState: {},
     models: [
