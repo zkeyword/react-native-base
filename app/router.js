@@ -12,7 +12,7 @@ import Register from './containers/Register'
 import Forget from './containers/Forget'
 // import Home from './containers/Home'
 import ComingSoon from './containers/ComingSoon'
-import map from './containers/Map/Index'
+// import map from './containers/Map/Index'
 import POIDetail from './containers/Map/POIDetail'
 import UserSettings from './containers/UserSettings'
 import ModifyPwd from './containers/UserSettings/pwdModify'
@@ -21,6 +21,8 @@ import TeamNameSettings from './containers/Map/Team/teamNameSettings'
 import UserInfoSettings from './containers/UserSettings/userInfoSettings'
 import ScanScreen from './containers/Map/QRCodeScanner'
 import WebView from './containers/WebView'
+
+const rightButton = <View style={{height: 44, width: 55, justifyContent: 'center', paddingRight: 15}} />
 
 @connect(({ auth }) => ({ ...auth }))
 class RouterComponent extends PureComponent {
@@ -48,10 +50,10 @@ class RouterComponent extends PureComponent {
                         contentComponent={DrawerContent}
                         drawerWidth={styles.drawerWidth}
                         drawerIcon={<View style={{ padding: 2 }}><Image source={require('./assets/img/login_userid_white.png')} /></View>}
-                        initial={isLogin}
+                        initial
                     >
                         <Stack key='mapRoot'>
-                            <Scene key='map' component={map} />
+                            <Scene key='map' title='扫码' component={ModifyPwd} renderRightButton={rightButton} />
                         </Stack>
                     </Drawer>
                 </Stack>

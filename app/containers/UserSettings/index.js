@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Text, ScrollView, View, Switch, TouchableOpacity, Alert, Linking, Platform } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
-import deviceInfo from 'react-native-device-info'
-import update from 'react-native-app-update-for-android'
+// import deviceInfo from 'react-native-device-info'
+// import update from 'react-native-app-update-for-android'
 
 @connect(({ userInfo, auth, vercheck }) => ({ ...userInfo, ...auth, ...vercheck }))
 class UserSettings extends Component {
@@ -42,7 +42,7 @@ class UserSettings extends Component {
                 }
             })
         } else {
-            update.downloadApp(`http://dynamax-apps.oss-cn-shenzhen.aliyuncs.com/android/litchi-sea/litchi-sea-${this.props.newVersion}.apk`)
+            // update.downloadApp(`http://dynamax-apps.oss-cn-shenzhen.aliyuncs.com/android/litchi-sea/litchi-sea-${this.props.newVersion}.apk`)
         }
     }
 
@@ -79,7 +79,7 @@ class UserSettings extends Component {
                 <TouchableOpacity style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: 'white', marginVertical: 5 }}
                     onPress={() => this.onVerCheck()}>
                     <Text style={{ marginLeft: 15, marginVertical: 10 }}>检测版本 </Text>
-                    <Text style={{ marginRight: 15, marginVertical: 10 }}>v{deviceInfo.getVersion()}</Text>
+                    {/* <Text style={{ marginRight: 15, marginVertical: 10 }}>v{deviceInfo.getVersion()}</Text> */}
                 </TouchableOpacity>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: 'white', marginVertical: 5 }}>
                     <Text style={{ marginLeft: 15, marginVertical: 10 }}>清除缓存 </Text>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View, ScrollView, Image } from 'react-native'
 import { connect } from 'react-redux'
-import { CachedImage } from 'react-native-img-cache'
+// import { CachedImage } from 'react-native-img-cache'
 
 import HTMLView from 'react-native-htmlview'
 import { format } from '../../../../utils/time'
 import HeaderTitle from '../../../../components/headerTitle'
 import Modal from '../../../../components/model'
-import Player from '../../../../components/player'
+// import Player from '../../../../components/player'
 import styles from './style'
 
 @connect(({ map, audioType }) => ({ ...map, ...audioType }))
@@ -39,16 +39,16 @@ class CustomHeaderTitle extends Component {
     }
 
     renderModelContent = data => {
-        let { audioType } = this.props
-        let uri = (() => {
-            let uri
-            data.voices.map(item => {
-                if (item.type === audioType) {
-                    uri = item.src
-                }
-            })
-            return uri
-        })()
+        // let { audioType } = this.props
+        // let uri = (() => {
+        //     let uri
+        //     data.voices.map(item => {
+        //         if (item.type === audioType) {
+        //             uri = item.src
+        //         }
+        //     })
+        //     return uri
+        // })()
         return data && (
             <View style={styles.modelWrap}>
                 <ScrollView contentContainerStyle={styles.modelImagesWrap} horizontal showsHorizontalScrollIndicator >
@@ -56,7 +56,7 @@ class CustomHeaderTitle extends Component {
                         data.pictures.map((item, index) => {
                             let arr = [styles.modelImageItem]
                             if (!index) arr.push(styles.modelImageItemFirst)
-                            return <View key={index} style={arr}><CachedImage style={styles.modelImage} source={{ uri: item }} /></View>
+                            return <View key={index} style={arr}><Image style={styles.modelImage} source={{ uri: item }} /></View>
                         })
                     }
                 </ScrollView>
@@ -71,7 +71,7 @@ class CustomHeaderTitle extends Component {
                 <View style={styles.modelOpenTime}>
                     <Text>开放时间：{format(data.wt.openTime, 'HH:mm')}~{format(data.wt.closeTime, 'HH:mm')}</Text>
                 </View>
-                <Player uri={encodeURI(uri)} />
+                {/* <Player uri={encodeURI(uri)} /> */}
             </View>
         )
     }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Text, View, Image, TouchableOpacity } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import JoinTeam from '../joinTeam'
-import { CachedImage } from 'react-native-img-cache'
+// import { CachedImage } from 'react-native-img-cache'
 
 import styles from './style'
 
@@ -26,9 +26,7 @@ class DrawerContent extends React.Component {
                         <View style={styles.avatarBox}>
                             <View style={styles.avatarWrap}>
                                 {
-                                    this.props.userInfo.avatar
-                                        ? <CachedImage style={styles.avatar} source={{ uri: this.props.userInfo.avatar }} />
-                                        : <Image style={styles.avatar} source={require('../../assets/img/icon_user.png')} />
+                                    <Image style={styles.avatar} source={require('../../assets/img/icon_user.png')} />
                                 }
                             </View>
                             <View style={styles.userName}>

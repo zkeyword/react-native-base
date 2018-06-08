@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import { Drawer, Overlay, Label, Wheel } from 'teaset'
-import { CachedImage } from 'react-native-img-cache'
+// import { CachedImage } from 'react-native-img-cache'
 
 import { format } from '../../../utils/time'
 import Loading from '../../../components/Loading'
@@ -236,9 +236,7 @@ class TeamSettings extends Component {
                 <TouchableOpacity key={index} style={styles.menberItem} onPress={() => this.removeMenber(item.userId)}>
                     <View style={styles.menberAvatar}>
                         {
-                            item.avatar
-                                ? <CachedImage style={styles.menberAvatarImg} source={{ uri: item.avatar }} />
-                                : <Image style={styles.menberAvatarImg} source={require('../../../assets/img/icon_user.png')} />
+                            <Image style={styles.menberAvatarImg} source={require('../../../assets/img/icon_user.png')} />
                         }
                     </View>
                     {this.state.isRemoveMenber && !item.leader && <Icon style={styles.menberDelIcon} name='ios-close-circle-outline' />}

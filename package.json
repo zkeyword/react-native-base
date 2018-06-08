@@ -27,6 +27,7 @@
     "AndroidDeviceRelease": "cd android && ./gradlew installRelease"
   },
   "dependencies": {
+    "antd-mobile": "^2.1.11",
     "axios": "^0.17.1",
     "crypto-js": "^3.1.9-1",
     "dva-core": "^1.1.0",
